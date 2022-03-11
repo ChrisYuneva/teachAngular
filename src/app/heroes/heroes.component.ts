@@ -13,6 +13,7 @@ export class HeroesComponent implements OnInit {
 
   selectedHero: Hero;
 
+  count: number=0;
 
   constructor() {
   }
@@ -22,6 +23,10 @@ export class HeroesComponent implements OnInit {
 
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
+  }
+
+  test(): void {
+    this.count++;
   }
 
 }

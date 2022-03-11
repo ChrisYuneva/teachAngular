@@ -9,4 +9,5 @@
 
 <app-hero-detail [hero]="selectedHero"></app-hero-detail>
 
-
+<button (click)="test()" class="heroes_button" [class.active]="count>0">click</button>
+<span class="heroes_span">Вы кликнули: {{count}} раз!</span>
