@@ -12,9 +12,16 @@ export class HeroesComponent implements OnInit {
 
   heroes: Hero[];
 
-  selectedHero: Hero;
-
   count: number=0;
+
+  i: number=1;
+
+  pic = [
+    {k: '../../assets/1.jpg'},
+    {k: '../../assets/2.jpg'},
+    {k: '../../assets/3.jpg'},
+    {k: '../../assets/4.jpg'},
+  ]
 
   constructor(private heroService: HeroService) { }
 
@@ -22,12 +29,21 @@ export class HeroesComponent implements OnInit {
     this.getHeroes();
   }
 
-  onSelect(hero: Hero): void {
-    this.selectedHero = hero;
-  }
-
   test(): void {
     this.count++;
+  }
+
+  slide(): void {
+    setTimeout(() => {
+      // while (this.i < 4  ){
+      //   this.i++
+      // }
+      for(this.i; this.i<4; this.i++) {
+        console.log('jknj')
+      }
+    }, 0)
+
+
   }
 
   getHeroes(): void {

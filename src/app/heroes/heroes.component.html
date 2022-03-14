@@ -1,16 +1,21 @@
 <h2>My Heroes</h2>
 <ul class="heroes">
-  <li *ngFor="let hero of heroes"
-      [class.selected]="hero === selectedHero"
-      (click)="onSelect(hero)">
-    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  <li *ngFor="let hero of heroes">
+    <a routerLink="/detail/{{hero.id}}">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </a>
   </li>
 </ul>
-
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>
 
 <div class="counter_container">
   <button (click)="test()" class="heroes_button" [class.active]="count>0">click</button>
   <span *ngIf="count>0" class="heroes_span">Вы кликнули: {{count}} раз!</span>
 </div>
+<!--<div class="img_test" *ngFor="let u of pic">-->
+
+<!--<span *ngFor="let u of pic" [test]="u">{{test}}</span>-->
+  <img (click)="slide()"class="img_test" src="../../assets/{{i}}.jpg"/>
+<button (click)="slide()" class="heroes_button">Slide</button>
+
+<!--</div>-->
 
