@@ -14,8 +14,11 @@ export class HeroDetailComponent implements OnInit {
   hero: Hero | undefined;
 
   constructor(
+    //ActivatedRoute содержит инорфмацию о маршруте к этому экземпляру HeroDetailComponent. Этому компоненту интересен список параметров маршрута, выделенных из URL. Параметр "id" - id отображаемого героя.
     private route: ActivatedRoute,
+    // HeroService получает информацию о герое с удаленного сервера, и HeroDetailComponent будет использовать его для получения героя для отображения.
     private heroService: HeroService,
+    // location - это сервис фреймворка Angular для взаимодействия с браузером. Мы обратимся к ней позднее для возврата к тому виду, из которому мы пришли.
     private location: Location
   ) {}
 

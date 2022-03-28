@@ -14,13 +14,13 @@ export class HeroesComponent implements OnInit {
 
   count: number=0;
 
-  i: number=1;
+  i: number=0;
 
   pic = [
-    {k: '../../assets/1.jpg'},
-    {k: '../../assets/2.jpg'},
-    {k: '../../assets/3.jpg'},
-    {k: '../../assets/4.jpg'},
+    '../../assets/1.jpg',
+    '../../assets/2.jpg',
+   '../../assets/3.jpg',
+  '../../assets/4.jpg',
   ]
 
   constructor(private heroService: HeroService) { }
@@ -34,14 +34,17 @@ export class HeroesComponent implements OnInit {
   }
 
   slide(): void {
-    setTimeout(() => {
-      // while (this.i < 4  ){
-      //   this.i++
-      // }
-      for(this.i; this.i<4; this.i++) {
-        console.log('jknj')
-      }
-    }, 0)
+    this.i++;
+    if(this.i > this.pic.length-1) {
+      this.i = 0;
+    }
+  }
+
+  slideB(): void {
+    this.i--;
+    if(this.i < 0) {
+      this.i = this.pic.length-1;
+    }
   }
 
   getHeroes(): void {

@@ -26,8 +26,9 @@
 <!--<div class="img_test" *ngFor="let u of pic">-->
 
 <!--<span *ngFor="let u of pic" [test]="u">{{test}}</span>-->
-  <img (click)="slide()"class="img_test" src="../../assets/{{i}}.jpg"/>
+  <img (click)="slide()"class="img_test" [src]="pic[i]"/>
 <button (click)="slide()" class="heroes_button">Slide</button>
+<button (click)="slideB()" class="heroes_button">SlideB</button>
 
 <!--</div>-->
 
